@@ -37,7 +37,7 @@ const Todo = () => {
    e.preventDefault();
    try {
      const { data } = await axios.post(
-       `http://localhost:6969/tasks/addtask`,
+       `https://arzun.onrender.com/tasks/addtask`,
        {
          description,
        },
@@ -51,7 +51,7 @@ const Todo = () => {
       setDescription('')
      toast.success(data.message);
    } catch (error) {
-     toast.error(error.response.data.message);
+     console.log(error.response);
    }
    setLoading(false)
    setRefresh('dk')
@@ -59,7 +59,7 @@ const Todo = () => {
 
 const deleteTodo = async(task_id)=>{
    setRefresh('tk')
-   await axios.delete(`http://localhost:6969/tasks/${task_id}`,{withCredentials:true})
+   await axios.delete(`https://arzun.onrender.com/tasks/${task_id}`,{withCredentials:true})
    .then(res => toast.success(res.data.message))
    .catch(err =>  toast.error(err.response.data.message))
 
@@ -135,23 +135,6 @@ function handleDrag(result)
                         </Droppable>
                     </DragDropContext>
           </div>
-
-
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </>
       )}
     </>

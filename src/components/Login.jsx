@@ -12,7 +12,7 @@ const Login = () => {
     setIsLoading(true);
     e.preventDefault();
 
-    const data = await axios
+    await axios
       .post(
         "https://arzun.onrender.com/users/login",
         { email, password },

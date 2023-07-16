@@ -1,17 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
-import { API } from "../App";
 import { toast } from "react-hot-toast";
-import { Context } from "../main";
+
 
 const Register = () => {
-  const {
-    isAuthnecated = false,
-    setIsAuthnecated,
-    isLoading,
-    setIsLoading,
-  } = useContext(Context);
+const [isAuthnecated,setIsAuthnecated]= useState(false)
+const [isLoading,setIsLoading]= useState(false)
 
   const handleSubmit = async (e) => {
     setIsAuthnecated(false);
