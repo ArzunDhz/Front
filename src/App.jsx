@@ -4,7 +4,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import Todo from './components/todo'
+import Todo from './components/Todo'
 import UserInfo from './components/UserInfo'
 export const API = 'https://okk-6ka1.onrender.com/api/'
 
